@@ -1,10 +1,25 @@
-function showMenu() {
-  // Get the navbar object
-  var navbar = document.getElementById("navbar");
-  // Check if the class is just navbar if it is, switch it to navbar and responsive, otherwise
-  if (navbar.className === "navbar") {
-    navbar.className += " responsive";
+// Scrolling functionality
+// Call the scroll to top function when the user scrolls the width of the navbar
+window.onscroll = function() {
+  showScrollButton("scroll-to-top")
+};
+// Function to check whether to show scroll button
+function showScrollButton(buttonID) {
+  // Get the navbar height
+  var navbarHeight = document.getElementById('navbar').clientHeight;
+  // Check if the user scrolled the height of the navbar
+  if (window.pageYOffset > navbarHeight) {
+    // Show the button if they did indeed scroll past it
+    document.getElementById(buttonID).style.display = "block";
   } else {
-    navbar.className = "navbar";
+    // otherwise hide the button again, ie. scrolling back to top manually
+    document.getElementById(buttonID).style.display = "none";
   }
 }
+// Scroll to the top function
+function scrollToTop(){
+  window.scrollTo(0, 0);
+}
+
+
+
