@@ -35,8 +35,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 		if (password_verify($password, $row[2])) {
 			$_SESSION['logged'] = true;
 			$_SESSION['type'] = $row[5];
-			echo 'alert("You will be redirected to your respective webpage.")';
-			header("location:dashboard.php");
+			break;
 		}
 		else
 		{
@@ -45,6 +44,8 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 	}
 }
 mysqli_free_result($retval);
-header("location:index.php#signin");
+// 	header("location:dashboard.php");
+
+header("location:index.php")
 mysqli_close($conn);
 ?>

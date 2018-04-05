@@ -58,10 +58,8 @@ mysqli_free_result($retval);
 $retval = mysqli_query($conn, $sql);
 if(!$retval)
 {
-  echo "|" . $email . "|";
-  echo mysqli_errno($conn) . ': ' . mysqli_error($conn);
   header("location:error.html");
 }
-header("location:index.php#signin");
+header("location:index.php#login");
 mysqli_close($conn);
 ?>
