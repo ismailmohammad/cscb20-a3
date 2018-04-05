@@ -44,8 +44,6 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 	}
 }
 mysqli_free_result($retval);
-// 	header("location:dashboard.php");
-
-header("location:index.php")
+header("location:index.php");
 mysqli_close($conn);
 ?>
