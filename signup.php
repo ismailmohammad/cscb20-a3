@@ -21,7 +21,7 @@ $dbpass = '2444666668888888';
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, 'cscb20w18_sohanisa', 3306);
 if(!$conn)
 {
-  //header("location:/error.html");
+  header("location:error.html");
 }
 
 $sqlselect = 'select username, email, utorid, studentnum from users';
@@ -30,14 +30,14 @@ $retval = mysqli_query($conn, $sqlselect);
 
 if(!$retval)
 {
-	//header("location:/error.html");
+	header("location:error.html");
 }
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
 	if(($username == $row[0]) or ($email == $row[1]) or ($utorid == $row[2]) or ($studentnum == $row[3]))
   {
-		//header("location:/index.php");
-		//die("One or more of (username, email, utorid, or studentnum) already exists.");
+		header("location:index.php");
+		die("One or more of (username, email, utorid, or studentnum) already exists.");
 	}
 }
 if($utorid == '')
@@ -60,8 +60,8 @@ if(!$retval)
 {
   echo "|" . $email . "|";
   echo mysqli_errno($conn) . ': ' . mysqli_error($conn);
-  //header("location:/error.html");
+  header("location:error.html");
 }
-//header("location:/index.php#signin");
+header("location:index.php#signin");
 mysqli_close($conn);
 ?>
