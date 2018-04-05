@@ -38,10 +38,10 @@ function switchToPanelAsync() {
   setTimeout(function switchToPanel() {
     if (window.innerWidth <= 970) {
       document.getElementById('title-panel').className = "panel lightpink";
-      document.getElementById('navbar-homelink').style.display = "none";
+      //       document.getElementById('navbar-homelink').style.display = "none";
     } else {
       document.getElementById('title-panel').className = "fullwidth-panel lightpink";
-      document.getElementById('navbar-homelink').style.display = "block";
+      //       document.getElementById('navbar-homelink').style.display = "block";
     }
   }, 100)
 }
@@ -49,3 +49,30 @@ function switchToPanelAsync() {
 window.addEventListener('resize', switchToPanelAsync);
 switchToPanelAsync();
 
+function clearSignupFields() {
+  // Clear the associated
+  document.getElementById('username').value = "";
+  document.getElementById('password').value = "";
+  document.getElementById('password-repeat').value = "";
+  document.getElementById('utorid').value = "";
+  document.getElementById('email').value = "";
+  document.getElementById('studentnum').value = "";
+}
+
+function clearLoginFields() {
+  // Clear associated fields for login panel
+  document.getElementById('login').value = "";
+  document.getElementById('password-l').value = "";
+}
+
+function checkConfirmPass() {
+  if (document.getElementById('password').value == document.getElementById('password-repeat').value) {
+    document.getElementById('submit-button').disabled = false;
+    document.getElementById('submit-button').style.backgroundColor = '#36c729';
+    document.getElementById('password-repeat').style.backgroundColor = 'white';
+  } else {
+    document.getElementById('submit-button').disabled = true;
+    document.getElementById('submit-button').style.backgroundColor = 'grey';
+    document.getElementById('password-repeat').style.backgroundColor = '#cf2727';
+  }
+}
