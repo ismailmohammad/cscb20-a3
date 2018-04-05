@@ -64,7 +64,7 @@
             <br>
             <div id="login-buttons">
               <button id="login-clear-button" type="button" onclick="javascript: clearLoginFields()" class="cancel-button">Clear</button>
-              <button id="login-button" type="submit">Sign Up</button>
+              <button id="login-button" type="submit">Log In</button>
             </div>
           </div>
         </form>

@@ -76,3 +76,7 @@ function checkConfirmPass() {
     document.getElementById('password-repeat').style.backgroundColor = '#cf2727';
   }
 }
+
+function goBack() {
+  window.history.back();
+}
