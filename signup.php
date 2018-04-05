@@ -24,7 +24,7 @@ if(!$conn)
   //header("location:/error.html");
 }
 
-$sqlselect = 'select username, email, utorid, studentnum from userdata';
+$sqlselect = 'select username, email, utorid, studentnum from users';
 
 $retval = mysqli_query($conn, $sqlselect);
 
@@ -40,13 +40,26 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 		//die("One or more of (username, email, utorid, or studentnum) already exists.");
 	}
 }
-
+if($utorid == '')
+{
+  $utorid = "NULL";
+}
+if($email == '')
+{
+  $email = "NULL";
+}
+if($studentnum == '')
+{
+  $studentnum = "NULL";
+}
 $sql = "INSERT INTO users ". "(username, password, type, email, utorid, studentnum) ".
-"VALUES($username, $password, $type, $email, $utorid, $studentnum)";
-
+"VALUES ('$username', '$password', '$type', '$email', '$utorid', $studentnum)";
+mysqli_free_result($retval);
 $retval = mysqli_query($conn, $sql);
 if(!$retval)
 {
+  echo "|" . $email . "|";
+  echo mysqli_errno($conn) . ': ' . mysqli_error($conn);
   //header("location:/error.html");
 }
 //header("location:/index.php#signin");

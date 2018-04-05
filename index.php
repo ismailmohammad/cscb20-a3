@@ -50,7 +50,7 @@
       </div>
       <!--  Login Form  -->
       <div id="login-form-container" class="panel lightpink">
-        <form action="/login.php" method="post">
+        <form action="login.php" method="post">
           <div>
             <h1>Log in to your CSCB20 account</h1>
             <br>
@@ -72,7 +72,7 @@
       <br>
       <!--   Signup Form   -->
       <div id="signup-form-container" class="panel lightpink">
-        <form action="/signup.php" method="post">
+        <form action="signup.php" method="post">
           <div>
             <h1>Sign Up</h1>
             <p>Please fill in this form to create an account for CSCB20</p>
