@@ -1,7 +1,7 @@
 <?php
 Session_start();
 
-if(!isset($_SESSION["logged"]) or !$_SESSION["logged"] or $_SESSION['type'] != 1)
+if(!isset($_SESSION["logged"]) or !$_SESSION["logged"] or $_SESSION['type'] != 3)
 	header("location:index.php");
 
 $dbhost = 'localhost';
@@ -14,7 +14,7 @@ if(!$conn)
   header("location:error.html");
 }
 
-$sqlselect = 'select b.name, b.assignment_type, a.grade from grades a join assignments b on a.assignment_id=b.id where a.student_id=' . $_SESSION['userid'];
+$sqlselect = 'select b.name, b.assignment_type, a.grade, a.student_id from grades a join assignments b on a.assignment_id=b.id';
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {
@@ -25,6 +25,7 @@ $quizmarks = array();
 $quiznames = array();
 $assignmentmarks = array();
 $assignmentnames = array();
+$studentmarks = array($quizmarks, $assignmentmarks);
 $mtmark;
 $mtname;
 $finalmark;

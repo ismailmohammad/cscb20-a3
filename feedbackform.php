@@ -116,7 +116,6 @@ END;
 END;
 }
 					 print <<< END
-              <option value='abbas786'>Abbas Attarwala</option>
             </select>
             <br><br>
             <div id="feedback-buttons">
