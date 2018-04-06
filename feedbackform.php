@@ -111,10 +111,8 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <select id="target" name="type">
 END;
 				for ($x = 0; $x <= count($iusername); $x++) {
-					echo alert($iusername[$x]);
-					echo alert($iname[$x]);
 					print <<< END
-					<option value=$iusername[$x]>$iname[$x]</option>
+					<option value="$iusername[$x]">$iname[$x]</option>
 END;
 }
 					 print <<< END
