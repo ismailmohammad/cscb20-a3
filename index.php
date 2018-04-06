@@ -137,7 +137,7 @@ END;
 				if ($_SESSION['type'] == 1) {
 					// If Student:
 					// Link to Grades
-					echo '<a href=mygrades.php>Click here to see your grades</a>'
+					echo '<a href=mygrades.php>Click here to see your grades</a>';
 					// Link to remark form
 					// Link to feedback form
 				} else if ($_SESSION['type'] == 2) {
