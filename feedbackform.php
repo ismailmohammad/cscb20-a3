@@ -108,7 +108,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <textarea id="additional" type="text" placeholder="Your Feedback" name="additional"></textarea>
             <br><br>
             <label for="target"><b>Select an instructor</b></label>
-            <select id="target" name="type">
+            <select id="target" name="target">
 END;
 				for ($x = 0; $x < count($iusername); $x++) {
 					print <<< END
