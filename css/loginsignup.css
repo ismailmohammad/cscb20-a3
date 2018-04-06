@@ -1,6 +1,6 @@
 button {
   color: white;
-  background-color: #36c729;
+  background-color: #1FCC21;
   border: solid;
   cursor: pointer;
   width: 75%;
@@ -11,14 +11,14 @@ button {
 }
 
 .cancel-button {
-  background-color: #cf2727;
+  background-color: #CF1C27;
 }
 
 .submit-button{
   background-color: grey;
 }
 .signout-button{
-  background-color: #cf2727;
+  background-color: #CF1C27;
   max-width: 25%;
 }
 .back-button{
@@ -31,8 +31,8 @@ input {
   width: 75%;
   padding: 15px;
   display: inline-block;
-  background: white;
-  border: none;
+  background: ;
+  border: 3px solid black;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
@@ -355,7 +355,7 @@ footer a:hover {
 .navbar.responsive a:first-child {
     display: block;
     text-align: right;
-    color: black;
+    background-color: #606F72;
   }
 
 /* Screensize less than 970px */
