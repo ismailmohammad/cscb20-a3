@@ -79,10 +79,10 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
       <?php
 				print <<< END
 				<h1>Submitted Feedback</h1>
-        <p>The questions on the form were: What do you like about the intructor teaching? <br>
-        What do you recommend the instructor to do to improve their teaching? <br>
-        What do you like about the labs? <br>
-        What do you recommend the lab instructors to do to improve their lab teaching?</p>
+        <p>The questions on the form were: What do you like about the intructor teaching?</p>
+        <p>What do you recommend the instructor to do to improve their teaching?</p>
+        <p>What do you like about the labs?</p>
+        <p>What do you recommend the lab instructors to do to improve their lab teaching?</p>
 END;
         $feedbacknum = count($answers1);
         for($i = 0; $i < $feedbacknum; $i++)
