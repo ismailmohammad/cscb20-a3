@@ -10,7 +10,7 @@ if(!$conn)
   header("location:error.html");
 }
 
-$sqlselect = 'select b.assignment_name, b.assignment_type, a.grade from grades a join assignments b on a.assignment_id=b.id where a.student_id=' . $_SESSION['userid'];
+$sqlselect = 'select b.name, b.assignment_type, a.grade from grades a join assignments b on a.assignment_id=b.id where a.student_id=' . $_SESSION['userid'];
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {

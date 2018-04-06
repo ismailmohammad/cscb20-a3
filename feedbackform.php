@@ -19,7 +19,7 @@ if(!$retval)
 
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-	//
+	array_push($_SESSION['instructors'], $row[0]);
 }
 ?>
 <!doctype html>
