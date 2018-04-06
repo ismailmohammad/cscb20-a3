@@ -25,6 +25,7 @@ $quizmarks = array();
 $quiznames = array();
 $assignmentmarks = array();
 $assignmentnames = array();
+$studentnames = array();
 $studentmarks = array($quizmarks, $assignmentmarks);
 $mtmark;
 $mtname;
