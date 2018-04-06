@@ -95,14 +95,14 @@ Session_start();
             <br>
             <input id="password-repeat" type="password" placeholder="Confirm Password" name="password-repeat" minLength=8 onchange='checkConfirmPass();'required>
             <br>
-	    <label for="firstname"><b>First Name</b></label>
-	    <br>
-	    <input id="firstname" type="text" placeholder="Enter First Name" name="firstname" required>
-	    <br>
-	    <label for="lastname"><b>Last Name</b></label>
-	    <br>
-	    <input id="lastname" type="text" placeholder="Enter Last Name" name="lastname" required>
-	    <br>
+						<label for="firstname"><b>First Name</b></label>
+						<br>
+						<input id="firstname" type="text" placeholder="Enter First Name" name="firstname" required>
+						<br>
+						<label for="lastname"><b>Last Name</b></label>
+						<br>
+						<input id="lastname" type="text" placeholder="Enter Last Name" name="lastname" required>
+						<br>
             <label for="email"><b>Email</b></label>
             <br>
             <input id="email" type="email" placeholder="Enter Email (optional)" name="email">
@@ -140,17 +140,15 @@ END;
 					// Link to remark form
 					echo '<p><a href=feedbackform.php>Click here to submit course feedback</a></p>';
 				} else if ($_SESSION['type'] == 2) {
-					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
 					// If TA:
 					// Link to remark requests
 					// Enter marks for students
-					
 				} else if ($_SESSION['type'] == 3) {
-					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
 					// If Instructor:
-					// Link to grade display for all students
+					// Link to grade display for all students --progress
 					// Link to enter grades
 					// Link to see all remark requests
+					// Link to see anonymous feedback
 				}
 				// Signout Button
 				print <<< END

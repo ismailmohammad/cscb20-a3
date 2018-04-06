@@ -14,51 +14,37 @@ if(!$conn)
   header("location:error.html");
 }
 
-$sqlselect = 'select b.name, b.assignment_type, a.grade, a.student_id from grades a join assignments b on a.assignment_id=b.id';
+$sqlselect = 'select c.firstname, c.lastname, c.id from grades a join users c where a.student_id=c.id order by a.student_id desc'
+$retval = mysqli_query($conn, $sqlselect);
+if(!$retval)
+{
+	header("location:error.html");
+}
+$studentnames = array();
+$studentids = array();
+
+while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
+{
+	array_push($studentnames, $row[0] . " " . $row [1]);
+	array_push($studentnames, $row[2]);
+}
+
+$sqlselect = 'select b.name, a.grade, a.student_id from grades a join assignments b on a.assignment_id=b.id order by a.student_id desc';
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {
 	header("location:error.html");
 }
 
-$quizmarks = array();
-$quiznames = array();
-$assignmentmarks = array();
+$marks = array();
 $assignmentnames = array();
-$studentnames = array();
-$studentmarks = array($quizmarks, $assignmentmarks);
-$mtmark;
-$mtname;
-$finalmark;
-$finalname;
-$labmark;
-$labname;
+$ids = array();
+
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-  if($row[1] == 1){
-    array_push($quizmarks, $row[2]);
-    array_push($quiznames, $row[0]);
-  }
-  else if($row[1] == 2)
-  {
-    array_push($assignmentmarks, $row[2]);
-    array_push($assignmentnames, $row[0]);
-  }
-  else if($row[1] == 3)
-  {
-    $mtmark = $row[2];
-    $mtname = $row[0];
-  }
-  else if($row[1] == 4)
-  {
-    $finalmark = $row[2];
-    $finalname = $row[0];
-  }
-  else if($row[1] == 5)
-  {  
-    $labmark = $row[2];
-    $labname = $row[0];
-  }
+	array_push($assignmentnames, $row[0);
+	array_push($marks, $row[1]);
+	array_push($ids, $row[2])
 }
 ?>
 <!doctype html>
@@ -105,55 +91,26 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
     </div>
     <div class="center">
       <?php
-				$fname = $_SESSION['fname'];
-				$lname = $_SESSION['lname'];
 				print <<< END
-				<h1>$fname $lname's Marks</h1>
+				<h1>All Marks</h1>
 END;
-				$quiznum = count($quizmarks);
-				if($quiznum > 0)
-				{
-					for($i = 0; $i<$quiznum; $i++)
-					{
-						print <<< END
-						<p>$quiznames[$i]: $quizmarks[$i]</p>
-END;
-					}
-					echo '<br>';
-				}
-
-			$assignmentnum = count($assignmentmarks);
-			if($assignmentnum > 0)
-			{
-				for($i=0; $i<$assignmentnum; $i++)
+				$students = count($studentnames)
+				$marksnum = count($marks);
+				for($i = 0; $i < $students; $i++)
 				{
 					print <<< END
-					<p>$assignmentnames[$i]: $assignmentmarks[$i]</p>
+					<h2>$studentnames[$i]'s Marks</h2>
 END;
+					for($j = 0; $j < $marksnum; $j++)
+					{
+						if($ids($j) == $studentids($i))
+						{
+							print <<< END
+							<p>$assignmentnames[$j]: $marks[$j]</p>
+END;
+						}
+					}
 				}
-				echo '<br>';
-			}
-			if(isset($mtmark))
-			{
-				print <<< END
-				<p>$mtname: $mtmark</p>
-				<br>
-END;
-			}
-			if(isset($finalmark))
-			{
-				print <<< END
-				<p>$finalname: $finalmark</p>
-				<br>
-END;
-			}
-			if(isset($labmark))
-			{
-				print <<< END
-				<p>$labname: $labmark</p>
-				<br>
-END;
-			}
       ?>
     </div>
   </div>

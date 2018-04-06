@@ -1,6 +1,7 @@
 <?php
 Session_start();
 // Feedback Variables
+$instructor = $_POST['instructor'];
 $improvement = $_POST['improvement'];
 $labs = $_POST['labs'];
 $labsimprove = $_POST['labs-improve'];
@@ -22,7 +23,7 @@ if($additional == '')
 {
   $additional = "NULL";
 }
-$feedback = $improvement." ".$labs." ".$labsimprove;
+$feedback = $instructor." ".$improvement." ".$labs." ".$labsimprove;
 $sql = "INSERT INTO feedback ". "(directed_id, feedback, additional) ".
 "VALUES ('$target', '$feedback', '$additional')";
 $retval = mysqli_query($conn, $sql);
