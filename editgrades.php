@@ -28,7 +28,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
 	array_push($sid, $row[0]);
 	array_push($susername, $row[1]);
-	array_push($iname, ($row[3]." ".$row[4]));
+	array_push($iname, ($row[2]." ".$row[3]));
 }
 
 mysqli_free_result($retval);
