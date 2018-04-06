@@ -23,8 +23,8 @@ if($additional == '')
   $additional = "NULL";
 }
 $feedback = $improvement." ".$labs." ".$labsimprove;
-$sql = "INSERT INTO feedback ". "(feedback_id, directed_id, feedback, additional) ".
-"VALUES ('$_SESSION['userid']', '$target', '$feedback', '$additional')";
+$sql = "INSERT INTO feedback ". "(directed_id, feedback, additional) ".
+"VALUES ('$target', '$feedback', '$additional')";
 mysqli_free_result($retval);
 $retval = mysqli_query($conn, $sql);
 if(!$retval)

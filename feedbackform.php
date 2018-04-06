@@ -105,7 +105,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <br><br>
             <label for="additional"><b>Any Additional Feedback (Optional)</b></label>
             <br><br>
-            <textarea id="additional" type="text" placeholder="Your Feedback" name="additional" required></textarea>
+            <textarea id="additional" type="text" placeholder="Your Feedback" name="additional"></textarea>
             <br><br>
             <label for="target"><b>Select an instructor</b></label>
             <select id="target" name="type">
