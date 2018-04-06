@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 		// Check if entered password matches the hashed password
 		if (password_verify($password, $row[2])) {
 			$_SESSION['logged'] = true;
-			$_SESSION['type'] = $row[5];
+			$_SESSION['type'] = $row[3];
 			$_SESSION['fname'] = $row[7];
 			$_SESSION['lname'] = $row[8];
 			$_SESSION['userid'] = $row[0];
