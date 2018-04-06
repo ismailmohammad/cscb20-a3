@@ -137,20 +137,20 @@ END;
 				if ($_SESSION['type'] == 1) {
 					// If Student:
 					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
-					// Link to remark form
+					// Link to Remark Form
+					echo '<p><a href=remarkform.php>Click here to submit a remark request</a></p>';
+					// Link to Course Feedback
 					echo '<p><a href=feedbackform.php>Click here to submit course feedback</a></p>';
 				} else if ($_SESSION['type'] == 2) {
 					// If TA:
 					// Link to remark requests
-					// Enter marks for students
 					echo '<p><a href=editgrades.php>Click here to add or edit grades for all students</a></p>';
 				} else if ($_SESSION['type'] == 3) {
 					// If Instructor:
 					echo '<p><a href=allgrades.php>Click here to see grades for all students</a></p>';
-					// Link to enter grades
 					echo '<p><a href=editgrades.php>Click here to add or edit grades for all students</a></p>';
 					// Link to see all remark requests
-					// Link to see anonymous feedback
+					echo '<p><a href=feedback.php>Click here to see all submitted anonymous feedback</a></p>';
 				}
 				// Signout Button
 				print <<< END
