@@ -30,7 +30,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 	array_push($answers2, $row[1]);
 	array_push($answers3, $row[2]);
 	array_push($answers4, $row[3]);
-  array_push($additionals = $row[4]);
+  array_push($additionals, $row[4]);
 }
 ?>
 <!doctype html>
