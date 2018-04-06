@@ -137,15 +137,17 @@ END;
 				if ($_SESSION['type'] == 1) {
 					// If Student:
 					// Link to Grades
-					echo '<a href=mygrades.php>Click here to see your grades</a>';
+					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
 					// Link to remark form
 					// Link to feedback form
 				} else if ($_SESSION['type'] == 2) {
+					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
 					// If TA:
 					// Link to remark requests
 					// Enter marks for students
 					
 				} else if ($_SESSION['type'] == 3) {
+					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
 					// If Instructor:
 					// Link to grade display for all students
 					// Link to enter grades

@@ -110,7 +110,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <label for="target"><b>Select an instructor</b></label>
             <select id="target" name="type">
 END;
-				for ($x = 0; $x <= count($_SESSION['instructors-username']); $x++) {
+				for ($x = 0; $x <= count($iusername); $x++) {
 					echo alert($iusername);
 					echo alert($iname);
 					print <<< END
