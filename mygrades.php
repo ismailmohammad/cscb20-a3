@@ -30,13 +30,13 @@ $labname;
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
   if($row[1] == 1){
-    array_push($quizmarks[], $row[2]);
-    array_push($quiznames[], $row[0]);
+    array_push($quizmarks, $row[2]);
+    array_push($quiznames, $row[0]);
   }
   else if($row[1] == 2)
   {
-    array_push($assignmentmarks[], $row[2]);
-    array_push($assignmentnames[], $row[0]);
+    array_push($assignmentmarks, $row[2]);
+    array_push($assignmentnames, $row[0]);
   }
   else if($row[1] == 3)
   {
