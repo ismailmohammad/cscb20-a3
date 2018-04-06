@@ -44,7 +44,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
 	array_push($assignmentnames, $row[0]);
 	array_push($marks, $row[1]);
-	array_push($ids, $row[2])
+	array_push($ids, $row[2]);
 }
 ?>
 <!doctype html>
