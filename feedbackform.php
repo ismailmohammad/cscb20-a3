@@ -11,7 +11,7 @@ if(!$conn)
 }
 $iusername = array();
 $iname = array();
-$sqlselect = 'select username, firstname, lastname from users where type=3';
+$sqlselect = 'select id, firstname, lastname from users where type=3';
 
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)

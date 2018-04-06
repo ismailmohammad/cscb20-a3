@@ -25,8 +25,8 @@ if($additional == '')
 $feedback = $improvement." ".$labs." ".$labsimprove;
 $sql = "INSERT INTO feedback ". "(directed_id, feedback, additional) ".
 "VALUES ('$target', '$feedback', '$additional')";
-mysqli_free_result($retval);
 $retval = mysqli_query($conn, $sql);
+mysqli_free_result($retval);
 // if(!$retval)
 // {
 //   header("location:error.html");
