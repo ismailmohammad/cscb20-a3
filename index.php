@@ -134,9 +134,9 @@ Session_start();
 END;
       }
       else{
-				print <<< END
 				$fname = $_SESSION['fname'];
 				$lname = $_SESSION['lname'];
+				print <<< END
       	<div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
         <div class="center" style="color: white;">
           <h1>Welcome, $fname $lname<h1>
@@ -145,19 +145,31 @@ END;
 END;
 				if ($_SESSION['type'] == 1) {
 					// If Student:
-					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
-					echo '<p><a href=remarkform.php>Click here to submit a remark request</a></p>';
-					echo '<p><a href=feedbackform.php>Click here to submit course feedback</a></p>';
+					print <<< END
+					      <div class="panel lightpink">
+      <div class="panel rounded"><a href=mygrades.php>Click here to see your grades</a></div><br>
+      <div class="panel rounded"><a href=remarkform.php>Click here to submit a remark request</a></div><br>
+      <div class="panel rounded"><a href=feedbackform.php>Click here to submit course feedback</a></div><br>
+      </div>
+END;
 				} else if ($_SESSION['type'] == 2) {
 					// If TA:
-					echo '<p><a href=viewremarks.php>Click here to view remark requests</a></p>';
-					echo '<p><a href=editgrades.php>Click here to add or edit grades for all students</a></p>';
+					print <<< END
+					      <div class="panel lightpink">
+      <div class="panel rounded"><a href=viewremarks.php>Click here to view remark requests</a></div><br>
+      <div class="panel rounded"><a href=editgrades.php>Click here to add or edit grades for all students</a></div><br>
+      </div>
+END;
 				} else if ($_SESSION['type'] == 3) {
 					// If Instructor:
-					echo '<p><a href=allgrades.php>Click here to see grades for all students</a></p>';
-					echo '<p><a href=editgrades.php>Click here to add or edit grades for all students</a></p>';
-					echo '<p><a href=viewremarks.php>Click here to view remark requests</a></p>';
-					echo '<p><a href=feedback.php>Click here to see all submitted anonymous feedback</a></p>';
+					print <<< END
+					      <div class="panel lightpink">
+      <div class="panel rounded"><a href=allgrades.php>Click here to see grades for all students</a></div><br>
+      <div class="panel rounded"><a href=editgrades.php>Click here to add or edit grades for all students</a></div><br>
+			<div class="panel rounded"><a href=viewremarks.php>Click here to view remark requests</a></div><br>
+			<div class="panel rounded"><a href=feedback.php>Click here to see all submitted anonymous feedback</a></div><br>
+      </div>
+END;
 				}
 				// Signout Button
 				print <<< END
