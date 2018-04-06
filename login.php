@@ -19,7 +19,7 @@ if(!$conn)
 }
 
 // Base Selection Query
-$sqlselect = 'select username, password, email, utorid, studentnum, type from users';
+$sqlselect = 'select * from users';
 
 $retval = mysqli_query($conn, $sqlselect);
 
@@ -29,12 +29,14 @@ if(!$retval)
 }
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-	if(($login == $row[0]) or ($login == $row[2]) or ($login == $row[3]) or ($studentnum == $row[4]))
+	if(($login == $row[1]) or ($login == $row[4]) or ($login == $row[5]) or ($studentnum == $row[6]))
   {
 		// Check if entered password matches the hashed password
 		if (password_verify($password, $row[2])) {
 			$_SESSION['logged'] = true;
 			$_SESSION['type'] = $row[5];
+			$_SESSION['fname'] = $row[7];
+			$_SESSION['lname'] = $row[8];
 			break;
 		}
 		else

@@ -1,3 +1,6 @@
+<?php
+Session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -49,6 +52,9 @@
         </div>
       </div>
       <!--  Login Form  -->
+      <?php
+      if(!isset($_SESSION["logged"]) or !$_SESSION["logged"]){
+	  print <<< END
       <div id="login-form-container" class="panel lightpink">
         <form action="login.php" method="post">
           <div>
@@ -89,6 +95,14 @@
             <br>
             <input id="password-repeat" type="password" placeholder="Confirm Password" name="password-repeat" minLength=8 onchange='checkConfirmPass();'required>
             <br>
+	    <label for="firstname"><b>First Name</b></label>
+	    <br>
+	    <input id="firstname" type="text" placeholder="Enter First Name" name="firstname" required>
+	    <br>
+	    <label for="lastname"><b>Last Name</b></label>
+	    <br>
+	    <input id="lastname" type="text" placeholder="Enter Last Name" name="lastname" required>
+	    <br>
             <label for="email"><b>Email</b></label>
             <br>
             <input id="email" type="email" placeholder="Enter Email (optional)" name="email">
@@ -116,6 +130,12 @@
           </div>
         </form>
       </div>
+END;
+      }
+      else{
+	  echo '<p>Logged in</p>';
+      }
+      ?>
     </div>
   </div>
   <br><br>
