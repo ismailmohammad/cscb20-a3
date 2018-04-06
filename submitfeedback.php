@@ -27,11 +27,11 @@ $sql = "INSERT INTO feedback ". "(directed_id, feedback, additional) ".
 "VALUES ('$target', '$feedback', '$additional')";
 mysqli_free_result($retval);
 $retval = mysqli_query($conn, $sql);
-if(!$retval)
-{
-  header("location:error.html");
-  die("SQL error");
-}
+// if(!$retval)
+// {
+//   header("location:error.html");
+//   die("SQL error");
+// }
 echo "<script type='text/javascript'>alert('Feedback Successfully Submitted!'); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php'</script>";
 mysqli_close($conn);
 ?>
