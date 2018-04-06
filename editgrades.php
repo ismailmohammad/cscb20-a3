@@ -12,7 +12,8 @@ if(!$conn)
 $susername = array();
 $sname = array();
 $sid = array();
-$assignment();
+$assignmentid = array();
+
 $sqlselect = 'select id, firstname, lastname from users where type=3';
 
 $retval = mysqli_query($conn, $sqlselect);
@@ -117,7 +118,7 @@ END;
             <br><br>
             <label for="grade"><b>Enter grade</b></label>
             <br><br>
-            <input id="grade" type="number" placeholder="Enter Grade for Assignment" name="grade" min=0 max=200>
+            <input id="grade" type="number" placeholder="Enter Grade for Assignment" name="grade" min=0 max=200 step=0.01>
             <br><br>
             <div id="grades-buttons">
               <button id="grades-clear-button" type="button" onclick="javascript: clearGradeField()" class="cancel-button">Clear Grade</button>

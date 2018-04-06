@@ -14,7 +14,7 @@ if(!$conn)
   header("location:error.html");
 }
 
-$sqlselect = 'select firstname, lastname, id from users where type=1';
+$sqlselect = 'select firstname, lastname, id, username from users where type=1';
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {
@@ -22,11 +22,13 @@ if(!$retval)
 }
 $studentnames = array();
 $studentids = array();
+$usernames = array();
 
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
 	array_push($studentnames, $row[0] . " " . $row [1]);
 	array_push($studentids, $row[2]);
+	array_push($usernames, $row[3]);
 }
 
 $sqlselect = 'select b.name, a.grade, a.student_id from grades a join assignments b on a.assignment_id=b.id order by a.student_id desc';
@@ -99,7 +101,7 @@ END;
 				for($i = 0; $i < $students; $i++)
 				{
 					print <<< END
-					<h2>$studentnames[$i]'s Marks</h2>
+					<h2>$studentnames[$i] ($usernames[$i])'s Marks</h2>
 END;
 					for($j = 0; $j < $marksnum; $j++)
 					{
