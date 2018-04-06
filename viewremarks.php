@@ -1,7 +1,7 @@
 <?php
 Session_start();
 
-if(!isset($_SESSION["logged"]) or !$_SESSION["logged"] or $_SESSION['type'] != 3)
+if(!isset($_SESSION["logged"]) or !$_SESSION["logged"] or $_SESSION['type'] == 1)
 	header("location:index.php");
 
 $dbhost = 'localhost';
@@ -13,16 +13,27 @@ if(!$conn)
 {
   header("location:error.html");
 }
+$sqlselect = 'select a.status, a.request b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id join assignments c on c.id=a.assignment_id' ? $_SESSION['type'] == 3 : 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id where directed_id='.$_SESSION['userid'].' join assignments c on c.id=a.assignment_id';
 
-$sqlselect = 'select feedback, additional from feedback where directed_id=' . $_SESSION['userid'];
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
   header("location:error.html");
 
-$feedback = array();
+$statuses = array();
+$requests = array();
+$studentnames = array();
+$usernames = array();
+$assignments = array();
+$rids = array();
+
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-  array_push($feedback, ($row[0] . " Additionally: " . $row[1]));
+  array_push($statuses, $row[0]);
+	array_push($requests, $row[1]);
+	array_push($studentnames, ($row[2] . " " . $row[3]));
+  array_push($usernames, $row[4]);
+  array_push($assignments, $row[5]);
+  array_push($rids, $row[6]);
 }
 ?>
 <!doctype html>
@@ -70,20 +81,38 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
     <div class="center">
       <?php
 				print <<< END
-				<h1>Submitted Feedback</h1>
-        <p>The questions on the form were: What do you like about the intructor teaching? What do you recommend the instructor to do to improve their teaching? What do you like about the labs? What do you recommend the lab instructors to do to improve their lab teaching?</p>
+				<h1>Remark Requests</h1>
 END;
-        $feedbacknum = count($feedback);
-        for($i = 0; $i < $feedbacknum; $i++)
+        $requestnum = count($requests);
+        for($i = 0; $i < $requestnum; $i++)
         {
           print <<< END
-          <p>Feedback: </p>
-          <p>$feedback[$i]</p>
-          <br>
+          <p>Request submitted by: $studentnames[$i] ($usernames[$i])</p>
+          <p>Course Component: $assignments[$i]</p>
+          <p>Request: $requests[$i]</p>
 END;
-        }
+          if($status[$i])
+					{
+            print <<< END
+						'<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]>Click here to close request</a>'
+END;
+					} else
+						echo '<p>Status: Closed</p>';
+				}
+        // Signout Button
+				print <<< END
+				<div class="center">
+				<button id="signout-button" type="button" onClick="location.href='signout.php'" class="signout-button">Sign Out</button>
+				</div>
+END;
       ?>
     </div>
   </div>
+  <br><br>
+  <!--  Footer  -->
+  <footer>
+    <p><a href="https://www.utsc.utoronto.ca/cms/computer-science-mathematics-statistics">Department of Computer Science and Mathematical Sciences at UTSC</a></p>
+    <p>Site designed by Sameed Sohani and Mohammad Ismail</p>
+  </footer>
   </body>
 </html>
