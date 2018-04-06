@@ -46,7 +46,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 <head>
   <meta charset="utf-8">
   <title>CSCB20 - Introduction to Databases and Web Applications</title>
-  <meta name="description" content="CSCB20 Course Website">$s
+  <meta name="description" content="CSCB20 Course Website">
   <meta name="author" content="Designed by Sameed Sohani and Mohammad Ismail">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Add loginsignup.css -->
@@ -95,7 +95,7 @@ END;
           <p>Course Component: $assignments[$i]</p>
           <p>Request: $requests[$i]</p>
 END;
-          if($statuses[$i])
+          if(!$statuses[$i])
 					{
             print <<< END
 						'<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]>Click here to close request</a>'
