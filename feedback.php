@@ -111,6 +111,7 @@ END;
        }
 			// Signout Button
 				print <<< END
+				<button id="back-button" type="button" onClick="window.history.back();" class="panel">Go Back</button>
 				<button id="signout-button" type="button" onClick="location.href='signout.php'" class="signout-button">Sign Out</button>
 END;
       ?>
