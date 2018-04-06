@@ -17,7 +17,7 @@ $sqlselect = 'select a.status, a.request b.firstname, b.lastname, b.username, c.
 
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
-	echo sqli_error($conn);
+	echo mysqli_error($conn);
   //header("location:error.html");
 
 $statuses = array();
