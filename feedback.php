@@ -85,7 +85,8 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
         </div>
       	</div>
 				<div class="panel">
-        <p>The questions on the form were: What do you like about the intructor teaching?</p>
+				<p><b>The questions on the form were:</b></p>
+        <p>What do you like about the intructor teaching?</p>
         <p>What do you recommend the instructor to do to improve their teaching?</p>
         <p>What do you like about the labs?</p>
         <p>What do you recommend the lab instructors to do to improve their lab teaching?</p>
@@ -96,7 +97,7 @@ END;
         {
           print <<< END
 					<div class="panel lightpink">
-          <p>Feedback: </p>
+          <p><b>Feedback:</b></p>
           <p>$answers1[$i]</p>
 					<p>$answers2[$i]</p>
 					<p>$answers3[$i]</p>

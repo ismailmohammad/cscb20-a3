@@ -96,17 +96,17 @@ END;
         {
           print <<< END
 					<div class="panel lightpink">
-          <p>Request submitted by: $studentnames[$i] ($usernames[$i])</p>
-          <p>Course Component: $assignments[$i]</p>
-          <p>Request: $requests[$i]</p>
+          <p><b>Request submitted by:</b> $studentnames[$i] ($usernames[$i])</p>
+          <p><b>Course Component:</b> $assignments[$i]</p>
+          <p><b>Request:</b> $requests[$i]</p>
 END;
           if(!$statuses[$i])
 					{
             print <<< END
-						<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]><div class="panel rounded">Click here to close request</div></a></div><br>
+						<p><b>Status:</b> Open </p><a href=closerequest.php?rid=$rids[$i]><div class="panel rounded">Click here to close request</div></a></div><br>
 END;
 					} else
-						echo '<p>Status: Closed</p></div><br>';
+						echo '<p><b>Status:</b> Closed</p></div><br>';
 				}
         // Signout Button
 				print <<< END
