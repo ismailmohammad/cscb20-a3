@@ -133,7 +133,7 @@ Session_start();
 END;
       }
       else{
-				echo 'Welcome, '. $_SESSION['firstname']. ' ', $_SESSION['lastname'];
+				echo 'Welcome, '. $_SESSION['fname']. ' ', $_SESSION['lname'];
 				if ($_SESSION['type'] == 1) {
 					// If Student:
 					// Link to Grades
