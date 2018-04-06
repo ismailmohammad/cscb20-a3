@@ -51,7 +51,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
   else if($row[1] == 5)
   {  
     $labmark = $row[2];
-    $labname = $row[0]
+    $labname = $row[0];
   }
 }
 ?>
