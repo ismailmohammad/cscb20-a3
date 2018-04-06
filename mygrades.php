@@ -107,7 +107,12 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 				$fname = $_SESSION['fname'];
 				$lname = $_SESSION['lname'];
 				print <<< END
-				<h1>$fname $lname's Marks</h1>
+				<div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
+        <div class="center" style="color: white;">
+          <h1>$fname $lname's Marks<h1>
+        </div>
+      	</div>
+				<div class="panel lightpink">
 END;
 				$quiznum = count($quizmarks);
 				if($quiznum > 0)
@@ -155,6 +160,7 @@ END;
 			}
 			// Signout Button
 				print <<< END
+				</div><br>
 				<div class="center">
 				<button id="signout-button" type="button" onClick="location.href='signout.php'" class="signout-button">Sign Out</button>
 				</div>
