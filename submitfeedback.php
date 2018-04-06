@@ -26,14 +26,13 @@ $feedback = $improvement." ".$labs." ".$labsimprove;
 $sql = "INSERT INTO feedback ". "(directed_id, feedback, additional) ".
 "VALUES ('$target', '$feedback', '$additional')";
 $retval = mysqli_query($conn, $sql);
-mysqli_free_result($retval);
-// if(!$retval)
-// {
-//   header("location:error.html");
-//   die("SQL error");
-// }
+if(!$retval)
+{
+  header("location:error.html");
+  die("SQL error");
+}
 
 echo mysqli_error($conn);
-//echo "<script type='text/javascript'>alert('Feedback Successfully Submitted!'); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php'</script>";
+echo "<script type='text/javascript'>alert('Feedback Successfully Submitted!'); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php'</script>";
 mysqli_close($conn);
 ?>
