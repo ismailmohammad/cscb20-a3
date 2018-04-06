@@ -108,7 +108,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <select id="target" name="type">
 END;
 					foreach ($arr as &$instructor) {
-						echo '<option value='abbas786'>Abbas Attarwala</option>';
+						echo '<option value="abbas786">Abbas Attarwala</option>';
 }
 					 print <<< END
               <option value='abbas786'>Abbas Attarwala</option>
