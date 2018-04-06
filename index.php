@@ -146,7 +146,7 @@ END;
 					// If Student:
 					print <<< END
 					      <div class="panel lightpink">
-      <div class="panel rounded"><a href=mygrades.php>Your Grades</a></div><br>
+      <div class="panel rounded"><a href=mygrades.php>View Your Grades</a></div><br>
       <div class="panel rounded"><a href=remarkform.php>Submit a Remark Request</a></div><br>
       <div class="panel rounded"><a href=feedbackform.php>Submit Anonymous Course Feedback</a></div><br>
       </div>
@@ -163,10 +163,10 @@ END;
 					// If Instructor:
 					print <<< END
 					      <div class="panel lightpink">
-      <div class="panel rounded"><a href=allgrades.php>See all Student Grades</a></div><br>
+      <div class="panel rounded"><a href=allgrades.php>View all Student Grades</a></div><br>
       <div class="panel rounded"><a href=editgrades.php>Add or Edit Student Grades</a></div><br>
 			<div class="panel rounded"><a href=viewremarks.php>View Remark Requests</a></div><br>
-			<div class="panel rounded"><a href=feedback.php>View Submitted Anonymous Feedback</a></div><br>
+			<div class="panel rounded"><a href=feedback.php>View Anonymous Feedback</a></div><br>
       </div>
 END;
 				}
