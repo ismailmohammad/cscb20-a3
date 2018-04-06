@@ -65,6 +65,15 @@ function clearLoginFields() {
   document.getElementById('password-l').value = "";
 }
 
+function clearFeedbackFields() {
+  // Clear associated fields for feedback form
+  document.getElementById('instructor').value = "";
+  document.getElementById('improvement').value = "";
+  document.getElementById('labs').value = "";
+  document.getElementById('labs-improve').value = "";
+  document.getElementById('additional').value = "";
+}
+
 function checkConfirmPass() {
   if (document.getElementById('password').value == document.getElementById('password-repeat').value) {
     document.getElementById('submit-button').disabled = false;

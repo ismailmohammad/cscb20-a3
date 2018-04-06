@@ -19,6 +19,7 @@ button {
 }
 .signout-button{
   background-color: #cf2727;
+  max-width: 25%;
 }
 input {
   margin: 6px 0 21px 0;
@@ -365,37 +366,6 @@ footer a:hover {
     max-height: 95% !important;
     max-width: 95% !important;
   }
-/*   .navbar a:not(:first-child) {
-    display: none;
-  }
-  .navbar.responsive a:not(:last-child) {
-    display: none;
-  }
-  .navbar a {
-    display: block;
-    float: left;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    padding: 14px 14px;
-    font-size: 14px;
-  }
-  .navbar.responsive {
-    position: fixed;
-    left: 0;
-    top: 0;
-    overflow: hidden;
-  }
-  .navbar.responsive a.icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  .navbar.responsive a {
-    float: none;
-    display: block;
-    text-align: center;
-  } */
   .panel {
     margin-right: 1rem;
     margin-left: 1rem;

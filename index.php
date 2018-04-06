@@ -133,14 +133,23 @@ Session_start();
 END;
       }
       else{
+				echo 'Welcome, '. $_SESSION['firstname']. ' ', $_SESSION['lastname'];
 				if ($_SESSION['type'] == 1) {
 					// If Student:
+					// Link to Grades
+					echo 'Click here to see your grades';
+					// Link to remark form
+					// Link to feedback form
 				} else if ($_SESSION['type'] == 2) {
 					// If TA:
+					// Link to remark requests
+					// Enter marks for students
 					
 				} else if ($_SESSION['type'] == 3) {
 					// If Instructor:
-					
+					// Link to grade display for all students
+					// Link to enter grades
+					// Link to see all remark requests
 				}
 				// Signout Button
 				print <<< END

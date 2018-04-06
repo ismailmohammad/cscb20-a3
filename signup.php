@@ -25,7 +25,7 @@ $dbpass = '2444666668888888';
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, 'cscb20w18_sohanisa', 3306);
 if(!$conn)
 {
-  //header("location:error.html");
+  header("location:error.html");
 }
 
 $sqlselect = 'select username, email, utorid, studentnum from users';
@@ -33,7 +33,7 @@ $retval = mysqli_query($conn, $sqlselect);
 
 if(!$retval)
 {
-	//header("location:error.html");
+	header("location:error.html");
 }
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {

@@ -3,7 +3,6 @@ Session_start();
 $_SESSION['login'] = $_POST['login'];
 $_SESSION['password'] = $_POST['password'];
 $_SESSION['logged'] = false;
-$_SESSION['type'] = 0;
 
 $login = $_SESSION['login'];
 $password = $_SESSION['password'];
@@ -37,6 +36,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 			$_SESSION['type'] = $row[5];
 			$_SESSION['fname'] = $row[7];
 			$_SESSION['lname'] = $row[8];
+			$_SESSION['userid'] = $row[0];
 			break;
 		}
 		else
