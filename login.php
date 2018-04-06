@@ -28,10 +28,10 @@ if(!$retval)
 }
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-	if(($login == $row[1]) or ($login == $row[4]) or ($login == $row[5]) or ($studentnum == $row[6]))
+	if(($login == $row[1]) or ($login == $row[4] && $row[4] != 'NULL') or ($login == $row[5] && $row[5] != 'NULL') or ($login == $row[6] && $row[6] != 'NULL'))
   {
 		// Check if entered password matches the hashed password
-		if (password_verify($password, $row[2])) {
+		if(password_verify($password, $row[2])) {
 			$_SESSION['logged'] = true;
 			$_SESSION['type'] = $row[3];
 			$_SESSION['fname'] = $row[7];
