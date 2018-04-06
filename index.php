@@ -146,27 +146,27 @@ END;
 					// If Student:
 					print <<< END
 					      <div class="panel lightpink">
-      <div class="panel rounded"><a href=mygrades.php>Click here to see your grades</a></div><br>
-      <div class="panel rounded"><a href=remarkform.php>Click here to submit a remark request</a></div><br>
-      <div class="panel rounded"><a href=feedbackform.php>Click here to submit course feedback</a></div><br>
+      <div class="panel rounded"><a href=mygrades.php>Your Grades</a></div><br>
+      <div class="panel rounded"><a href=remarkform.php>Submit a Remark Request</a></div><br>
+      <div class="panel rounded"><a href=feedbackform.php>Submit Anonymous Course Feedback</a></div><br>
       </div>
 END;
 				} else if ($_SESSION['type'] == 2) {
 					// If TA:
 					print <<< END
 					      <div class="panel lightpink">
-      <div class="panel rounded"><a href=viewremarks.php>Click here to view remark requests</a></div><br>
-      <div class="panel rounded"><a href=editgrades.php>Click here to add or edit grades for all students</a></div><br>
+      <div class="panel rounded"><a href=viewremarks.php>View Remark Requests</a></div><br>
+      <div class="panel rounded"><a href=editgrades.php>Add or Edit Student Grades</a></div><br>
       </div>
 END;
 				} else if ($_SESSION['type'] == 3) {
 					// If Instructor:
 					print <<< END
 					      <div class="panel lightpink">
-      <div class="panel rounded"><a href=allgrades.php>Click here to see grades for all students</a></div><br>
-      <div class="panel rounded"><a href=editgrades.php>Click here to add or edit grades for all students</a></div><br>
-			<div class="panel rounded"><a href=viewremarks.php>Click here to view remark requests</a></div><br>
-			<div class="panel rounded"><a href=feedback.php>Click here to see all submitted anonymous feedback</a></div><br>
+      <div class="panel rounded"><a href=allgrades.php>See all Student Grades</a></div><br>
+      <div class="panel rounded"><a href=editgrades.php>Add or Edit Student Grades</a></div><br>
+			<div class="panel rounded"><a href=viewremarks.php>View Remark Requests</a></div><br>
+			<div class="panel rounded"><a href=feedback.php>View Submitted Anonymous Feedback</a></div><br>
       </div>
 END;
 				}

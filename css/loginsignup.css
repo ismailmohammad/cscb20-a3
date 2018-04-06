@@ -60,13 +60,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* links elements on hover */
-
-a:hover {
-  font-weight: bold;
-  color: black;
-}
-
 /* Footer */
 
 footer {
@@ -80,6 +73,15 @@ footer {
   position: absolute;
   width: 100%;
   box-shadow: 0px -7px 10px rgba(0, 0, 0, 0.42);
+}
+
+
+a:hover {
+  color: black;
+  /*   background-color: #D8978A; */
+  background-color: #606F72;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /* Footer Links */
