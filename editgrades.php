@@ -9,8 +9,10 @@ if(!$conn)
 {
   header("location:error.html");
 }
-$iusername = array();
-$iname = array();
+$susername = array();
+$sname = array();
+$sid = array();
+$assignment();
 $sqlselect = 'select id, firstname, lastname from users where type=3';
 
 $retval = mysqli_query($conn, $sqlselect);
