@@ -99,7 +99,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
     </div>
     <div class="center">
       <?php
-				$quiznum = count($quizmarks[]);
+				$quiznum = count($quizmarks);
 				if($quiznum > 0)
 				{
 					for($i = 0; $i<$count; $i++)
