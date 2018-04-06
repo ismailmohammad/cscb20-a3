@@ -19,7 +19,7 @@ if(!$retval)
 
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-
+	//
 }
 ?>
 <!doctype html>
@@ -78,7 +78,6 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 				header("location:index.php");
       }
       else{
-				}
 					print <<< END
 				<div class="panel lightpink">
         <form action="submitfeedback.php" method="post">
