@@ -29,7 +29,8 @@ if(!$retval)
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
 	if ($row[0] == $assignmentid) {
-    echo "<script type='text/javascript'>alert('Remark Already Submitted for this assignment'); clearRemarkField(); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/remarkform.php'</script>";
+    echo "<script type='text/javascript'>alert('Remark Already Submitted for this assignment'); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/remarkform.php'</script>";
+		break;
   }
 }
 
