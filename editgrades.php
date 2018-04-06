@@ -71,7 +71,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
       <!--   Welcome   -->
       <div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
         <div class="center" style="color: white;">
-          <h1>Course Grades
+          <h1>CSCB20 Course Grades
             <h1>
         </div>
       </div>
@@ -83,11 +83,11 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
       else{
 					print <<< END
 				<div class="panel lightpink">
-        <form action="sendgrade.php" method="post">
+        <form action="submitfeedback.php" method="post">
           <div>
-            <h1>Add or Edit Grade for Student</h1>
+            <h1>Submit your feedback for CSCB20</h1>
             <br>
-            <label for="instructor"><b>Student ID</b></label>
+            <label for="instructor"><b>What do you like about the intructor teaching?</b></label>
             <br><br>
             <textarea id="instructor" type="text" placeholder="Your Feedback" name="instructor" required></textarea>
             <br><br>

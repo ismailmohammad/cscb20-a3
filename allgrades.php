@@ -14,7 +14,7 @@ if(!$conn)
   header("location:error.html");
 }
 
-$sqlselect = 'select c.firstname, c.lastname, c.id from grades a join users c where a.student_id=c.id order by a.student_id desc';
+$sqlselect = 'select c.firstname, c.lastname, a.student_id from grades a join users c where a.student_id=c.id order by a.student_id desc';
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {
@@ -26,7 +26,7 @@ $studentids = array();
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
 	array_push($studentnames, $row[0] . " " . $row [1]);
-	array_push($studentnames, $row[2]);
+	array_push($studentids, $row[2]);
 }
 
 $sqlselect = 'select b.name, a.grade, a.student_id from grades a join assignments b on a.assignment_id=b.id order by a.student_id desc';
@@ -103,7 +103,7 @@ END;
 END;
 					for($j = 0; $j < $marksnum; $j++)
 					{
-						if(isset($ids) && ($ids[$j] == $studentids[$i]))
+						if($ids[$j] == $studentids[$i])
 						{
 							print <<< END
 							<p>$assignmentnames[$j]: $marks[$j]</p>

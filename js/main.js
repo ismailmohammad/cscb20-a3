@@ -74,6 +74,11 @@ function clearFeedbackFields() {
   document.getElementById('additional').value = "";
 }
 
+function clearGradeField() {
+  // Clear Grades
+  document.getElementById('grade').value = "";
+}
+
 function checkConfirmPass() {
   if (document.getElementById('password').value == document.getElementById('password-repeat').value) {
     document.getElementById('submit-button').disabled = false;
