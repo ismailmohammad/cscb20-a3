@@ -16,7 +16,8 @@ if(!$conn)
 $sqlselect = 'select a.status, a.request b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id join assignments c on c.id=a.assignment_id' ? $_SESSION['type'] == 3 : 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id where directed_id='.$_SESSION['userid'].' join assignments c on c.id=a.assignment_id';
 
 $retval = mysqli_query($conn, $sqlselect);
-//if(!$retval)
+if(!$retval)
+	echo sqli_error($conn);
   //header("location:error.html");
 
 $statuses = array();
