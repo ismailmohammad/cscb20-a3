@@ -94,7 +94,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 				print <<< END
 				<h1>All Marks</h1>
 END;
-				$students = count($studentnames)
+				$students = count($studentnames);
 				$marksnum = count($marks);
 				for($i = 0; $i < $students; $i++)
 				{
