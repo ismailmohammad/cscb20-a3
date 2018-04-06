@@ -86,7 +86,7 @@ function clearRemarkField() {
 function checkConfirmPass() {
   if (document.getElementById('password').value == document.getElementById('password-repeat').value) {
     document.getElementById('submit-button').disabled = false;
-    document.getElementById('submit-button').style.backgroundColor = '#36c729';
+    document.getElementById('submit-button').style.backgroundColor = '#36C7F4';
     document.getElementById('password-repeat').style.backgroundColor = 'white';
   } else {
     document.getElementById('submit-button').disabled = true;
