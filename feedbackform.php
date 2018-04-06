@@ -112,7 +112,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 END;
 				for ($x = 0; $x <= count($_SESSION['instructors-username']); $x++) {
 					print <<< END
-					<option value='$_SESSION['instructors-username'][$x]'>$_SESSION['instructors-name'][$x]</option>
+					<option value=$_SESSION['instructors-username'][$x]>$_SESSION['instructors-name'][$x]</option>
 					END;
 }
 					 print <<< END

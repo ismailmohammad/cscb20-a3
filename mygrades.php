@@ -117,7 +117,7 @@ END;
 					echo '<br>';
 				}
 
-			$assignmentnum = count($quizmarks);
+			$assignmentnum = count($assignmentmarks);
 			if($assignmentnum > 0)
 			{
 				for($i=0; $i<$assignmentnum; $i++)
