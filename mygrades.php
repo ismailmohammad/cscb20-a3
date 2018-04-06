@@ -120,7 +120,7 @@ END;
 					for($i = 0; $i<$quiznum; $i++)
 					{
 						print <<< END
-						<p>$quiznames[$i]: $quizmarks[$i]</p>
+						<p><b>$quiznames[$i]:</b> $quizmarks[$i]</p>
 END;
 					}
 					echo '<br>';
@@ -132,7 +132,7 @@ END;
 				for($i=0; $i<$assignmentnum; $i++)
 				{
 					print <<< END
-					<p>$assignmentnames[$i]: $assignmentmarks[$i]</p>
+					<p><b>$assignmentnames[$i]:</b> $assignmentmarks[$i]</p>
 END;
 				}
 				echo '<br>';
@@ -140,21 +140,21 @@ END;
 			if(isset($mtmark))
 			{
 				print <<< END
-				<p>$mtname: $mtmark</p>
+				<p><b>$mtname:</b> $mtmark</p>
 				<br>
 END;
 			}
 			if(isset($finalmark))
 			{
 				print <<< END
-				<p>$finalname: $finalmark</p>
+				<p><b>$finalname:</b> $finalmark</p>
 				<br>
 END;
 			}
 			if(isset($labmark))
 			{
 				print <<< END
-				<p>$labname: $labmark</p>
+				<p><b>$labname:</b> $labmark</p>
 				<br>
 END;
 			}

@@ -114,7 +114,7 @@ END;
 						if($ids[$j] == $studentids[$i])
 						{
 							print <<< END
-							<p>$assignmentnames[$j]: $marks[$j]</p>
+							<p><b>$assignmentnames[$j]:</b> $marks[$j]</p>
 END;
 						}
 					}
