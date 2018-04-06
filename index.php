@@ -45,17 +45,16 @@ Session_start();
       <div id="scroll-to-top" class="panel align-right" onclick="scrollToTop();">Scroll up</div>
     </div>
     <div class="center">
-      <!--   Welcome   -->
-      <div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
+      <!--  Login Form  -->
+      <?php
+      if(!isset($_SESSION["logged"]) or !$_SESSION["logged"]){
+	  print <<< END
+		<div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
         <div class="center" style="color: white;">
           <h1>Introduction to Databases and Web Applications
             <h1>
         </div>
       </div>
-      <!--  Login Form  -->
-      <?php
-      if(!isset($_SESSION["logged"]) or !$_SESSION["logged"]){
-	  print <<< END
       <div id="login-form-container" class="panel lightpink">
         <form action="login.php" method="post">
           <div>

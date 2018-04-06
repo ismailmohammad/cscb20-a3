@@ -95,13 +95,18 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
     <div class="center">
       <?php
 				print <<< END
-				<h1>All Marks</h1>
+				<div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
+        <div class="center" style="color: white;">
+          <h1>Course Marks<h1>
+        </div>
+      </div>
 END;
 				$students = count($studentnames);
 				$marksnum = count($marks);
 				for($i = 0; $i < $students; $i++)
 				{
 					print <<< END
+					<div class="panel lightpink">
 					<h2>$studentnames[$i] (Username: $usernames[$i])'s Marks</h2>
 END;
 					for($j = 0; $j < $marksnum; $j++)
@@ -113,6 +118,7 @@ END;
 END;
 						}
 					}
+					echo '</div>';
 				}
      // Signout Button
 				print <<< END
