@@ -22,9 +22,9 @@ $sqlselect = 'update remarks set status=1 where request_id='.$rid;
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {
-// 	header("location:error.html");
-		echo mysqli_error($conn);
+  header("location:error.html");
+	echo mysqli_error($conn);
 }
-//echo "<script type='text/javascript'>alert('Remark Request Closed Successfully!'); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/viewremarks.php'</script>";
+echo "<script type='text/javascript'>alert('Remark Request Closed Successfully!'); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/viewremarks.php'</script>";
 mysqli_close($conn);
 ?>
