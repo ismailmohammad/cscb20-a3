@@ -23,9 +23,8 @@ if($additional == '')
 {
   $additional = "NULL";
 }
-$feedback = $instructor." ".$improvement." ".$labs." ".$labsimprove;
-$sql = "INSERT INTO feedback ". "(directed_id, feedback, additional) ".
-"VALUES ('$target', '$feedback', '$additional')";
+$sql = "INSERT INTO feedback ". "(directed_id, answer1, answer2, answer3, answer4, additional) ".
+"VALUES ('$target', '$instructor', '$improvement', '$labs', '$labsimprove', '$additional')";
 $retval = mysqli_query($conn, $sql);
 if(!$retval)
 {

@@ -14,18 +14,23 @@ if(!$conn)
   header("location:error.html");
 }
 
-$sqlselect = 'select feedback, additional from feedback where directed_id=' . $_SESSION['userid'];
+$sqlselect = 'select answer1, answer2, answer3, answer4, additional from feedback where directed_id=' . $_SESSION['userid'];
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
   header("location:error.html");
 
-$feedback = array();
+$answers1 = array();
+$answers2 = array();
+$answers3 = array();
+$answers4 = array();
+$additionals = array();
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-  $msg = $row[0];
-  if($row[1] != "NULL")
-    $msg = $msg . " Additionally, " . $row[1]; 
-  array_push($feedback, $msg);
+  array_push($answers1, $row[0]);
+	array_push($answers2, $row[1]);
+	array_push($answers3, $row[2]);
+	array_push($answers4, $row[3]);
+  array_push($additionals = $row[4]);
 }
 ?>
 <!doctype html>
@@ -74,19 +79,44 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
       <?php
 				print <<< END
 				<h1>Submitted Feedback</h1>
-        <p>The questions on the form were: What do you like about the intructor teaching? What do you recommend the instructor to do to improve their teaching? What do you like about the labs? What do you recommend the lab instructors to do to improve their lab teaching?</p>
+        <p>The questions on the form were: What do you like about the intructor teaching? <br>
+        What do you recommend the instructor to do to improve their teaching? <br>
+        What do you like about the labs? <br>
+        What do you recommend the lab instructors to do to improve their lab teaching?</p>
 END;
-        $feedbacknum = count($feedback);
+        $feedbacknum = count($answers1);
         for($i = 0; $i < $feedbacknum; $i++)
         {
           print <<< END
           <p>Feedback: </p>
-          <p>$feedback[$i]</p>
-          <br>
+          <p>$answers1[$i]</p>
+					<p>$answers2[$i]</p>
+					<p>$answers3[$i]</p>
+					<p>$answers4[$i]</p>
 END;
-        }
+          if($additionals[$i] != "NULL")
+          {
+            print <<< END
+            <p>$additionals[$i]</p>
+            <br>
+END; 
+          }
+       }
+      
+			// Signout Button
+				print <<< END
+				<div class="center">
+				<button id="signout-button" type="button" onClick="location.href='signout.php'" class="signout-button">Sign Out</button>
+				</div>
+END;
       ?>
     </div>
   </div>
+  <br><br>
+  <!--  Footer  -->
+  <footer>
+    <p><a href="https://www.utsc.utoronto.ca/cms/computer-science-mathematics-statistics">Department of Computer Science and Mathematical Sciences at UTSC</a></p>
+    <p>Site designed by Sameed Sohani and Mohammad Ismail</p>
+  </footer>
   </body>
 </html>
