@@ -115,7 +115,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 END;
 				for ($x = 0; $x < count($sid); $x++) {
 					print <<< END
-					<option value="$sid[$x]">$susername[$x]." ".$sname[$x]</option>
+					<option value="$sid[$x]">$susername[$x] $sname[$x]</option>
 END;
 }
 				print <<< END

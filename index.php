@@ -143,10 +143,12 @@ END;
 					// If TA:
 					// Link to remark requests
 					// Enter marks for students
+					echo '<p><a href=editgrades.php>Click here to add or edit grades for all students</a></p>';
 				} else if ($_SESSION['type'] == 3) {
 					// If Instructor:
 					echo '<p><a href=allgrades.php>Click here to see grades for all students</a></p>';
 					// Link to enter grades
+					echo '<p><a href=editgrades.php>Click here to add or edit grades for all students</a></p>';
 					// Link to see all remark requests
 					// Link to see anonymous feedback
 				}
