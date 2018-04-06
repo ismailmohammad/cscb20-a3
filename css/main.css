@@ -267,7 +267,8 @@ footer a:hover {
 
 #scroll-to-top {
   color: black;
-  background-color: #F4B3CD;
+  background-color: #FFFFFF;
+  /* LIGHT PINK #F4B3CD */
   display: none;
   position: fixed;
   padding: 8px;
