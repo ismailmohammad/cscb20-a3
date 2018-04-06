@@ -13,8 +13,10 @@ $susername = array();
 $sname = array();
 $sid = array();
 $assignmentid = array();
+$assignmentname = array();
+$assignmenttype = array();
 
-$sqlselect = 'select id, firstname, lastname from users where type=3';
+$sqlselect = 'select id, username, firstname, lastname from users where type=1';
 
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
@@ -24,9 +26,26 @@ if(!$retval)
 
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-	array_push($iusername, $row[0]);
-	array_push($iname, ($row[1]." ".$row[2]));
+	array_push($sid, $row[0]);
+	array_push($susername, $row[1]);
+	array_push($iname, ($row[3]." ".$row[4]));
 }
+
+mysqli_free_result($retval);
+$sqlselect = 'select id, name, assignment_type from assignments';
+$retval = mysqli_query($conn, $sqlselect);
+if(!$retval)
+{
+	header("location:error.html");
+}
+
+while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
+{
+	array_push($assignmentid, $row[0]);
+	array_push($assignmentname, $row[1]);
+	array_push($assignmenttype, $row[2]);
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -94,9 +113,9 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <br><br>
             <select id="student" name="student" required>
 END;
-				for ($x = 0; $x < count($iusername); $x++) {
+				for ($x = 0; $x < count($sid); $x++) {
 					print <<< END
-					<option value="$iusername[$x]">$iname[$x]</option>
+					<option value="$sid[$x]">$susername." ",$sname[$x]</option>
 END;
 }
 				print <<< END
@@ -108,9 +127,9 @@ END;
 END;
 				
 				
-				for ($x = 0; $x < count($iusername); $x++) {
+				for ($x = 0; $x < count($assignmentid); $x++) {
 					print <<< END
-					<option value="$iusername[$x]">$iname[$x]</option>
+					<option value="$assignmentid[$x]">$assignmentname[$x]</option>
 END;
 }
 					 print <<< END

@@ -101,7 +101,7 @@ END;
 				for($i = 0; $i < $students; $i++)
 				{
 					print <<< END
-					<h2>$studentnames[$i] ($usernames[$i])'s Marks</h2>
+					<h2>$studentnames[$i] (Username: $usernames[$i])'s Marks</h2>
 END;
 					for($j = 0; $j < $marksnum; $j++)
 					{

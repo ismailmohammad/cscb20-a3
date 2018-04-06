@@ -145,7 +145,7 @@ END;
 					// Enter marks for students
 				} else if ($_SESSION['type'] == 3) {
 					// If Instructor:
-					// Link to grade display for all students --progress
+					echo '<p><a href=allgrades.php>Click here to see grades for all students</a></p>';
 					// Link to enter grades
 					// Link to see all remark requests
 					// Link to see anonymous feedback
