@@ -41,11 +41,11 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 		}
 		else
 		{
-			echo 'alert("You have entered an incorrect password. Please correct and try again.");';
+			echo '<script type="text/javascript">alert("You have entered an incorrect login or password. Please correct and try again."); window.location.href="https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php#login"</script>';
 		}
 	}
 }
 mysqli_free_result($retval);
-header("location:index.php");
+echo '<script type="text/javascript">alert("You have entered an incorrect login or password. Please correct and try again."); window.location.href="https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php#login"</script>';
 mysqli_close($conn);
 ?>
