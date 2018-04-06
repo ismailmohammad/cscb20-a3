@@ -99,7 +99,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
         <div class="center" style="color: white;">
           <h1>Course Marks<h1>
         </div>
-      </div>
+      	</div>
 END;
 				$students = count($studentnames);
 				$marksnum = count($marks);
@@ -118,7 +118,7 @@ END;
 END;
 						}
 					}
-					echo '</div>';
+					echo '</div><br>';
 				}
      // Signout Button
 				print <<< END

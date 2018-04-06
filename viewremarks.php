@@ -85,12 +85,17 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
     <div class="center">
       <?php
 				print <<< END
-				<h1>Remark Requests</h1>
+				<div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
+        <div class="center" style="color: white;">
+          <h1>Remark Requests<h1>
+        </div>
+      	</div>
 END;
         $requestnum = count($requests);
         for($i = 0; $i < $requestnum; $i++)
         {
           print <<< END
+					<div class="panel lightpink">
           <p>Request submitted by: $studentnames[$i] ($usernames[$i])</p>
           <p>Course Component: $assignments[$i]</p>
           <p>Request: $requests[$i]</p>
@@ -98,10 +103,10 @@ END;
           if(!$statuses[$i])
 					{
             print <<< END
-						<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]>Click here to close request</a>
+						<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]><div class="panel rounded">Click here to close request</div></a></div><br>
 END;
 					} else
-						echo '<p>Status: Closed</p>';
+						echo '<p>Status: Closed</p></div><br>';
 				}
         // Signout Button
 				print <<< END

@@ -152,6 +152,7 @@ END;
 				<p>$labname: $labmark</p>
 				<br>
 END;
+			}
 			// Signout Button
 				print <<< END
 				<div class="center">
