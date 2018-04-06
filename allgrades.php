@@ -14,7 +14,7 @@ if(!$conn)
   header("location:error.html");
 }
 
-$sqlselect = 'select c.firstname, c.lastname, a.student_id from grades a join users c where a.student_id=c.id order by a.student_id desc';
+$sqlselect = 'select c.firstname, c.lastname, unique a.student_id from grades a join users c where a.student_id=c.id order by a.student_id desc';
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {

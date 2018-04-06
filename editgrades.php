@@ -83,44 +83,43 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
       else{
 					print <<< END
 				<div class="panel lightpink">
-        <form action="submitfeedback.php" method="post">
+        <form action="sendgrade.php" method="post">
           <div>
-            <h1>Submit your feedback for CSCB20</h1>
+            <h1>Add or Edit Grade for Student</h1>
             <br>
-            <label for="instructor"><b>What do you like about the intructor teaching?</b></label>
+            <label for="student"><b>Select Student</b></label>
             <br><br>
-            <textarea id="instructor" type="text" placeholder="Your Feedback" name="instructor" required></textarea>
-            <br><br>
-            <label for="improvement"><b>What do you recommend the instructor to do to improve their teaching?</b></label>
-            <br><br>
-            <textarea id="improvement" type="text" placeholder="Your Feedback" name="improvement" required></textarea>
-            <br><br>
-            <label for="labs"><b>What do you like about the labs?</b></label>
-            <br><br>
-            <textarea id="labs" type="text" placeholder="Your Feedback" name="labs" required></textarea>
-            <br><br>
-            <label for="labs-improve"><b>What do you recommend the lab instructors to do to improve their lab teaching?</b></label>
-            <br><br>
-            <textarea id="labs-improve" type="text" placeholder="Your Feedback" name="labs-improve" required></textarea>
-            <br><br>
-            <label for="additional"><b>Any Additional Feedback (Optional)</b></label>
-            <br><br>
-            <textarea id="additional" type="text" placeholder="Your Feedback" name="additional"></textarea>
-            <br><br>
-            <label for="target"><b>Select an instructor</b></label>
-            <select id="target" name="target">
+            <select id="student" name="student" required>
 END;
 				for ($x = 0; $x < count($iusername); $x++) {
 					print <<< END
 					<option value="$iusername[$x]">$iname[$x]</option>
 END;
 }
-					 print <<< END
-            </select>
+				print <<< END
+				 </select>
             <br><br>
-            <div id="feedback-buttons">
-              <button id="feedback-clear-button" type="button" onclick="javascript: clearFeedbackFields()" class="cancel-button">Clear Fields</button>
-              <button id="submit-feedback" type="submit">Submit Feedback</button>
+						<label for="assignment"><b>Select Assignment</b></label>
+            <br><br>
+            <select id="assignment" name="assignment">
+END;
+				
+				
+				for ($x = 0; $x < count($iusername); $x++) {
+					print <<< END
+					<option value="$iusername[$x]">$iname[$x]</option>
+END;
+}
+					 print <<< END
+             </select>
+            <br><br>
+            <label for="grade"><b>Enter grade</b></label>
+            <br><br>
+            <input id="grade" type="number" placeholder="Enter Grade for Assignment" name="grade" min=0 max=200>
+            <br><br>
+            <div id="grades-buttons">
+              <button id="grades-clear-button" type="button" onclick="javascript: clearGradeField()" class="cancel-button">Clear Grade</button>
+              <button id="submit-grade" type="submit">Add/Edit Grade</button>
             </div>
           </div>
         </form>
