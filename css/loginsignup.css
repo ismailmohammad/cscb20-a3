@@ -17,7 +17,9 @@ button {
 .submit-button{
   background-color: grey;
 }
-
+.signout-button{
+  background-color: #cf2727;
+}
 input {
   margin: 6px 0 21px 0;
   width: 75%;

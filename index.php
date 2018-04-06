@@ -133,7 +133,18 @@ Session_start();
 END;
       }
       else{
-	  echo '<p>Logged in</p>';
+				if ($_SESSION['type'] == 1) {
+					// If Student:
+				} else if ($_SESSION['type'] == 2) {
+					// If TA:
+					
+				} else if ($_SESSION['type'] == 3) {
+					// If Instructor:
+					
+				}
+				// Signout Button
+				print <<< END <div class="center"><button id="signout-button" type="button" onClick='location.href="signout.php"' class="signout-button">Sign Out</button></div>
+END;
       }
       ?>
     </div>
