@@ -103,7 +103,6 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 				$lname = $_SESSION['lname'];
 				print <<< END
 				<h1>$fname $lname's Marks</h1>
-				<br>
 END;
 				$quiznum = count($quizmarks);
 				if($quiznum > 0)

@@ -136,10 +136,9 @@ END;
 				echo 'Welcome, '. $_SESSION['fname']. ' ', $_SESSION['lname'];
 				if ($_SESSION['type'] == 1) {
 					// If Student:
-					// Link to Grades
 					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
 					// Link to remark form
-					// Link to feedback form
+					echo '<p><a href=feedbackform.php>Click here to submit course feedback</a></p>';
 				} else if ($_SESSION['type'] == 2) {
 					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
 					// If TA:
