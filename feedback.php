@@ -22,7 +22,10 @@ if(!$retval)
 $feedback = array();
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-  array_push($feedback, ($row[0] . " Additionally: " . $row[1]));
+  $msg = $row[0];
+  if($row[1] != "NULL")
+    $msg = $msg . " Additionally, " . $row[1]; 
+  array_push($feedback, $msg);
 }
 ?>
 <!doctype html>
