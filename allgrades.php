@@ -103,7 +103,7 @@ END;
 END;
 					for($j = 0; $j < $marksnum; $j++)
 					{
-						if($ids[$j] == $studentids[$i])
+						if(isset($ids) && ($ids[$j] == $studentids[$i]))
 						{
 							print <<< END
 							<p>$assignmentnames[$j]: $marks[$j]</p>
