@@ -16,8 +16,9 @@ if(!$conn)
   header("location:error.html");
 }
 
+$sid = $_SESSION['userid'];
 $sql = "INSERT INTO remarks ". "(submitted_id, directed_id, status, request, assignment_id) ".
-"VALUES ('$_SESSION['userid']', '$tid', 0, '$request', '$assignmentid')";
+"VALUES ('$sid', '$tid', '0', '$request', '$assignmentid')";
 $retval = mysqli_query($conn, $sql);
 if(!$retval)
 {
