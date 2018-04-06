@@ -98,7 +98,7 @@ END;
           if(!$statuses[$i])
 					{
             print <<< END
-						'<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]>Click here to close request</a>'
+						<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]>Click here to close request</a>
 END;
 					} else
 						echo '<p>Status: Closed</p>';
