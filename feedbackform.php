@@ -105,7 +105,12 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <textarea id="additional" type="text" placeholder="Your Feedback" name="additional" required></textarea>
             <br><br>
             <label for="target"><b>Select an instructor</b></label>
-            <select id="target" name="type"> 
+            <select id="target" name="type">
+END;
+					foreach ($arr as &$instructor) {
+						echo '<option value='abbas786'>Abbas Attarwala</option>'
+}
+					 print <<< END
               <option value='abbas786'>Abbas Attarwala</option>
             </select>
             <br><br>

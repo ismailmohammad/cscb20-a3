@@ -102,7 +102,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 				$quiznum = count($quizmarks);
 				if($quiznum > 0)
 				{
-					for($i = 0; $i<$count; $i++)
+					for($i = 0; $i<$quiznum; $i++)
 					{
 						print <<< END
 						<p>$quiznames[$i]: $quizmarks[i]</p>
