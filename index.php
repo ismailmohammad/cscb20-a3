@@ -29,12 +29,13 @@ Session_start();
       <a href="announcements.html">Announcements and Calendar</a>
       <a href="courseteam.html">Course Team</a>
       <a href="syllabus.html">Syllabus</a>
+			<a href="lectures.html">Course Notes</a>
       <a href="assignments.html">Assignments</a>
       <a href="labs.html">Weekly Labs</a>
       <a href="https://markus.utsc.utoronto.ca/cscb20w18/">MarkUs</a>
       <a href="https://piazza.com/class/jcpjjp5l4bywd">Piazza</a>
       <a href="http://www.utsc.utoronto.ca/iits/computer-labs">UTSC Labs</a>
-      <a href="http://www.utsc.utoronto.ca/ctl/course-evaluations">Feedback</a>
+      <a href="http://www.utsc.utoronto.ca/ctl/course-evaluations">Course Evaluations</a>
     </div>
   </div>
   <!--  Content  -->
@@ -133,7 +134,15 @@ Session_start();
 END;
       }
       else{
-				echo 'Welcome, '. $_SESSION['fname']. ' ', $_SESSION['lname'];
+				print <<< END
+				$fname = $_SESSION['fname'];
+				$lname = $_SESSION['lname'];
+      	<div id="title-panel" class="fullwidth-panel lightpink" style="background-color: #606F72;">
+        <div class="center" style="color: white;">
+          <h1>Welcome, $fname $lname<h1>
+        </div>
+      </div>
+END;
 				if ($_SESSION['type'] == 1) {
 					// If Student:
 					echo '<p><a href=mygrades.php>Click here to see your grades</a></p>';
