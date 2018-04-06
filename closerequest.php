@@ -17,7 +17,7 @@ if(!$conn)
 	header("location:error.html");
 }
 
-$sqlselect = 'update remarks set status=0 where remarks.rid='.$rid;
+$sqlselect = 'update remarks set status=1 where request_id='.$rid;
 
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
