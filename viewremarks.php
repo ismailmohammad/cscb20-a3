@@ -13,7 +13,10 @@ if(!$conn)
 {
   header("location:error.html");
 }
-$sqlselect = 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id join assignments c on c.id=a.assignment_id' ? $_SESSION['type'] == 3 : $sqlselect = 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id where directed_id='.$_SESSION['userid'].' join assignments c on c.id=a.assignment_id';
+if($_SESSION['type'] == 3)
+	$sqlselect = 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id join assignments c on c.id=a.assignment_id';
+else
+	$sqlselect = 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id where directed_id='.$_SESSION['userid'].' join assignments c on c.id=a.assignment_id';
 
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
@@ -43,7 +46,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 <head>
   <meta charset="utf-8">
   <title>CSCB20 - Introduction to Databases and Web Applications</title>
-  <meta name="description" content="CSCB20 Course Website">
+  <meta name="description" content="CSCB20 Course Website">$s
   <meta name="author" content="Designed by Sameed Sohani and Mohammad Ismail">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Add loginsignup.css -->
