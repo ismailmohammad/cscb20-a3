@@ -1,38 +1,5 @@
-<?php
-Session_start();
 
-if(!isset($_SESSION["logged"]) or !$_SESSION["logged"] or $_SESSION['type'] != 3)
-	header("location:index.php");
 
-$dbhost = 'localhost';
-$dbuser = 'sohanisa';
-$dbpass = '2444666668888888';
-
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, 'cscb20w18_sohanisa', 3306);
-if(!$conn)
-{
-  header("location:error.html");
-}
-
-$sqlselect = 'select answer1, answer2, answer3, answer4, additional from feedback where directed_id=' . $_SESSION['userid'];
-$retval = mysqli_query($conn, $sqlselect);
-if(!$retval)
-  header("location:error.html");
-
-$answers1 = array();
-$answers2 = array();
-$answers3 = array();
-$answers4 = array();
-$additionals = array();
-while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
-{
-  array_push($answers1, $row[0]);
-	array_push($answers2, $row[1]);
-	array_push($answers3, $row[2]);
-	array_push($answers4, $row[3]);
-  array_push($additionals, $row[4]);
-}
-?>
 <!doctype html>
 <html lang="en">
 
@@ -76,40 +43,7 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
       <div id="scroll-to-top" class="panel align-right" onclick="scrollToTop();">Scroll up</div>
     </div>
     <div class="center">
-      <?php
-				print <<< END
-				<h1>Submitted Feedback</h1>
-        <p>The questions on the form were: What do you like about the intructor teaching?</p>
-        <p>What do you recommend the instructor to do to improve their teaching?</p>
-        <p>What do you like about the labs?</p>
-        <p>What do you recommend the lab instructors to do to improve their lab teaching?</p>
-END;
-        $feedbacknum = count($answers1);
-        for($i = 0; $i < $feedbacknum; $i++)
-        {
-          print <<< END
-          <p>Feedback: </p>
-          <p>$answers1[$i]</p>
-					<p>$answers2[$i]</p>
-					<p>$answers3[$i]</p>
-					<p>$answers4[$i]</p>
-END;
-          if($additionals[$i] != "NULL")
-          {
-            print <<< END
-            <p>$additionals[$i]</p>
-            <br>
-END; 
-          }
-       }
       
-			// Signout Button
-				print <<< END
-				<div class="center">
-				<button id="signout-button" type="button" onClick="location.href='signout.php'" class="signout-button">Sign Out</button>
-				</div>
-END;
-      ?>
     </div>
   </div>
   <br><br>
