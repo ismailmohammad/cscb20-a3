@@ -79,8 +79,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: black;
-  /*   background-color: #D8978A; */
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
