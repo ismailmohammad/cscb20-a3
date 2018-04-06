@@ -95,7 +95,7 @@ END;
           <p>Course Component: $assignments[$i]</p>
           <p>Request: $requests[$i]</p>
 END;
-          if($status[$i])
+          if($statuses[$i])
 					{
             print <<< END
 						'<p>Status: Open </p><a href=closerequest.php?rid=$rids[$i]>Click here to close request</a>'
