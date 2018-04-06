@@ -143,8 +143,10 @@ END;
 					
 				}
 				// Signout Button
-				print <div class="center"><button id="signout-button" type="button" onClick='location.href="signout.php"' class="signout-button">Sign Out</button></div>
-      }
+				print <<< END 
+				<div class="center"><button id="signout-button" type="button" onClick='location.href="signout.php"' class="signout-button">Sign Out</button></div>
+END;
+			}
       ?>
     </div>
   </div>
