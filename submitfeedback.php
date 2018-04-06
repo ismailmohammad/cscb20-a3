@@ -32,6 +32,8 @@ $retval = mysqli_query($conn, $sql);
 //   header("location:error.html");
 //   die("SQL error");
 // }
+
+echo mysqli_error($conn);
 echo "<script type='text/javascript'>alert('Feedback Successfully Submitted!'); window.location.href='https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php'</script>";
 mysqli_close($conn);
 ?>
