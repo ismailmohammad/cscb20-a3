@@ -9,8 +9,10 @@ if(!$conn)
 {
   header("location:error.html");
 }
-$_SESSION['instructors'] = array();
-$sqlselect = 'select username from users where type=3';
+$_SESSION['instructor-username'] = array();
+$_SESSION['instructors-name'] = array();
+$sqlselect = 'select username, firstname, lastname from users where type=3';
+
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
 {
@@ -19,7 +21,8 @@ if(!$retval)
 
 while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 {
-	array_push($_SESSION['instructors'], $row[0]);
+	array_push($_SESSION['instructors-username'], $row[0]);
+	array_push($_SESSION['instructors-name'], ($row[1]." ".$row[2]));
 }
 ?>
 <!doctype html>
@@ -107,8 +110,10 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
             <label for="target"><b>Select an instructor</b></label>
             <select id="target" name="type">
 END;
-					foreach ($arr as &$instructor) {
-						echo '<option value="abbas786">Abbas Attarwala</option>';
+				for ($x = 0; $x <= count($_SESSION['instructors-username']); $x++) {
+					print <<< END
+					<option value='$_SESSION['instructors-username'][$x]'>$_SESSION['instructors-name'][$x]</option>
+					END;
 }
 					 print <<< END
               <option value='abbas786'>Abbas Attarwala</option>

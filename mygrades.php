@@ -99,6 +99,12 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
     </div>
     <div class="center">
       <?php
+				$fname = $_SESSION['fname'];
+				$lname = $_SESSION['lname'];
+				print <<< END
+				<h1>$fname $lname's Marks</h1>
+				<br>
+END;
 				$quiznum = count($quizmarks);
 				if($quiznum > 0)
 				{
@@ -108,7 +114,41 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 						<p>$quiznames[$i]: $quizmarks[$i]</p>
 END;
 					}
+					echo '<br>';
 				}
+
+			$assignmentnum = count($quizmarks);
+			if($assignmentnum > 0)
+			{
+				for($i=0; $i<$assignmentnum; $i++)
+				{
+					print <<< END
+					<p>$assignmentnames[$i]: $assignmentmarks[$i]</p>
+END;
+				}
+				echo '<br>';
+			}
+			if(isset($mtmark))
+			{
+				print <<< END
+				<p>$mtname: $mtmark</p>
+				<br>
+END;
+			}
+			if(isset($finalmark))
+			{
+				print <<< END
+				<p>$finalname: $finalmark</p>
+				<br>
+END;
+			}
+			if(isset($labmark))
+			{
+				print <<< END
+				<p>$labname: $labmark</p>
+				<br>
+END;
+			}
       ?>
     </div>
   </div>
