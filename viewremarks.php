@@ -16,12 +16,11 @@ if(!$conn)
 if($_SESSION['type'] == 3)
 	$sqlselect = 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id join assignments c on c.id=a.assignment_id';
 else
-	$sqlselect = 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id where directed_id='.$_SESSION['userid'].' join assignments c on c.id=a.assignment_id';
+	$sqlselect = 'select a.status, a.request, b.firstname, b.lastname, b.username, c.name, a.request_id from remarks a join users b on a.submitted_id=b.id join assignments c on c.id=a.assignment_id where directed_id='.$_SESSION['userid'];
 
 $retval = mysqli_query($conn, $sqlselect);
 if(!$retval)
-	echo mysqli_error($conn);
-  //header("location:error.html");
+  header("location:error.html");
 
 $statuses = array();
 $requests = array();
