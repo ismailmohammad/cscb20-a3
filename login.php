@@ -46,6 +46,9 @@ while($row = mysqli_fetch_array($retval, MYSQLI_NUM))
 	}
 }
 mysqli_free_result($retval);
-echo '<script type="text/javascript">alert("You have entered an incorrect login or password. Please correct and try again."); window.location.href="https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php#login"</script>';
+if(!isset($_SESSION['logged']) or !$_SESSION['logged'])
+	echo '<script type="text/javascript">alert("You have entered an incorrect login. Please correct and try again."); window.location.href="https://mathlab.utsc.utoronto.ca/cscb20/sohanisa/index.php#login"</script>';
+else
+	header("location:index.php");
 mysqli_close($conn);
 ?>
